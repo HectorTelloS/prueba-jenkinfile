@@ -24,6 +24,8 @@ pipeline{
 		        sh " echo 'Hola mundo' "
 				sh " echo ${env.NOMBRE_VARIABLE} "
 				sh " echo ${NOMBRE_VARIABLE} "
+
+                echo "Cambio en el pipefile"
 		    }
 		        
 		}
