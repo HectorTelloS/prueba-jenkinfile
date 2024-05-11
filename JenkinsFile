@@ -1,0 +1,32 @@
+pipeline{
+	agent any
+	environment{
+		NOMBRE_VARIABLE="este es el valor de la variable"
+	}
+	stages{
+		stage("escenario 1"){
+			steps{
+
+				echo "Se ejecuta el primer step de escenario 1"
+			}
+			
+		}
+		stage("escenario 2"){
+			steps{
+				echo "Se ejecuta el primer step de escenario 2"
+				echo "Se ejecuta el segundo step de escenario 2"
+			}
+		}
+		stage("Imprimir variable de entorno"){
+		    steps{
+		        echo "${env.NOMBRE_VARIABLE}"
+		        
+		        sh " echo 'Hola mundo' "
+				sh " echo ${env.NOMBRE_VARIABLE} "
+				sh " echo ${NOMBRE_VARIABLE} "
+		    }
+		        
+		}
+
+	}
+}
